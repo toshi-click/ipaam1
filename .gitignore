@@ -97,3 +97,5 @@ app/libs/
 !.idea/codeStyleSettings.xml
 !.idea/icon.png
 !.idea/icon_dark.png
+
+release.jks
