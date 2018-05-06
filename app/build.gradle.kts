@@ -38,12 +38,12 @@ android {
     dataBinding.isEnabled = true
 
     defaultConfig {
-        applicationId = "io.github.droidkaigi.confsched2018"
+        applicationId = "click.toshi.ipaam1"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
         versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
         versionName = "$versionMajor.$versionMinor.$versionPatch"
-        testInstrumentationRunner = "io.github.droidkaigi.confsched2018.test.TestAppRunner"
+        testInstrumentationRunner = "click.toshi.ipaam1.test.TestAppRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         resConfigs("en", "ja")
