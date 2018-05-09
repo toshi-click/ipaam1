@@ -22,7 +22,7 @@ deploy:
   stage: deploy
   script:
     # それぞれ復号化
-    - openssl aes-256-cbc -k $KEYSTORE_DECRYPT_PASSWORD -d -in encrypted-droidkaigi-key -out release.jks
+    - openssl aes-256-cbc -k $KEYSTORE_DECRYPT_PASSWORD -d -in encrypted-release.jks -out release.jks
     - openssl aes-256-cbc -k $JSON_DECRYPT_PASSWORD -d -in encrypted-google-services.json -out app/google-services.json
     - ./gradlew :app:uploadDeployGateRelease
     # 以降デプロイ処理～～～
