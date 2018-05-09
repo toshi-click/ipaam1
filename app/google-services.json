@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "568498446613",
+    "firebase_url": "https://toshi-ipaam1.firebaseio.com",
+    "project_id": "toshi-ipaam1",
+    "storage_bucket": "toshi-ipaam1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568498446613:android:4f9b57451b9283b7",
+        "android_client_info": {
+          "package_name": "click.toshi.ipaam1.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568498446613-lvd3bb3hpbnclvnc3ng3oc2sc33so04m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD53qi-o6v2p7nkjokoTxQTlORe9w91MZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
