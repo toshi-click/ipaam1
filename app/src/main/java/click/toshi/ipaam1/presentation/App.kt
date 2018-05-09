@@ -33,7 +33,7 @@ open class App : DaggerApplication() {
         setupThreeTenABP()
         setupCalligraphy()
 //        setupEmoji()
-        setupNotification()
+//        setupNotification()
     }
 
     override fun attachBaseContext(base: Context) {
