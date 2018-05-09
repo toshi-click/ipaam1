@@ -11,9 +11,10 @@ stages:
 #  - test
 
 build:
+  image: toshiclick/gitlab-ci-android
   stage: build
   script:
-    - ./gradlew assemble
+    - ./gradlew assembleDebug
 #    - ./gradlew lint
 #    - ./gradlew checkLicenses
 #    - ./gradlew jacocoTestReportDevelop
