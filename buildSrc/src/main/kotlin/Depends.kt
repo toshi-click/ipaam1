@@ -1,6 +1,6 @@
 object Depends {
     object Kotlin {
-        val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+        val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
     }
 
     object Coroutine {
@@ -60,7 +60,7 @@ object Depends {
     val rxbroadcast = "com.cantrowitz:rxbroadcast:2.0.0"
 
     object Binding {
-        val compiler = "com.android.databinding:compiler:3.0.1"
+        val compiler = "com.android.databinding:compiler:3.1.2"
     }
 
     val rxrelay = "com.jakewharton.rxrelay2:rxrelay:2.0.0"

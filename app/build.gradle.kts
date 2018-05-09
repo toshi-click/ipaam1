@@ -64,7 +64,7 @@ android {
         getByName("debug") {
             storeFile = rootProject.file("debug.jks")
             storePassword = "debugdebug"
-            keyAlias = "debug"
+            keyAlias = "debugdebug"
             keyPassword = "debugdebug"
         }
         create("release") {
