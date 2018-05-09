@@ -1,0 +1,5 @@
+<resources>
+    <!-- Elevation -->
+    <dimen name="elevation_app_bar">4dp</dimen>
+
+</resources>
