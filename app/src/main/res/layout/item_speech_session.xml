@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="session"
+            type="click.toshi.ipaam1.model.Session.SpeechSession"
+            />
+        <variable
+            name="isShowDayNumber"
+            type="boolean"
+            />
+        <variable
+            name="searchQuery"
+            type="String"
+            />
+        <variable
+            name="simplify"
+            type="boolean"
+            />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:stateListAnimator="@animator/card_state_list_anim"
+        android:background="@{session.isOnGoing ? @color/current_card_background_color : @color/card_background_color}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/current_badge"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/session_current_badge"
+                android:textColor="@color/accent"
+                android:visibility="@{session.isOnGoing ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toTopOf="@+id/day_number"
+                />
+            <TextView
+                android:id="@+id/day_number"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text='@{"DAY"+session.dayNumber}'
+                android:visibility="@{isShowDayNumber || simplify ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toEndOf="@+id/current_badge"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginStart="0dp"
+                tools:text="DAY1"
+                />
+
+            <TextView
+                android:id="@+id/divider_day_and_period"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/session_header_divider"
+                android:visibility="@{isShowDayNumber || simplify ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toEndOf="@+id/day_number"
+                app:layout_constraintTop_toTopOf="@id/day_number"
+                />
+
+            <TextView
+                android:id="@+id/period"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:endDate="@{session.endTime}"
+                app:layout_constraintStart_toEndOf="@id/divider_day_and_period"
+                app:layout_constraintTop_toTopOf="@id/divider_day_and_period"
+                app:layout_goneMarginTop="16dp"
+                app:startDate="@{session.startTime}"
+                tools:text="10:30 - 11:00"
+                />
+
+            <TextView
+                android:id="@+id/divider_period_and_room"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/session_header_divider"
+                android:visibility="@{isShowDayNumber || simplify ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toEndOf="@+id/period"
+                app:layout_constraintTop_toTopOf="@id/period"
+                />
+
+            <TextView
+                android:id="@+id/room"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                app:layout_constraintStart_toEndOf="@id/period"
+                app:layout_constraintTop_toTopOf="@+id/period"
+                app:prefix='@{" / "}'
+                app:roomName="@{session.room.name}"
+                tools:text=" / Room A"
+                />
+
+            <android.support.text.emoji.widget.EmojiTextView
+                android:id="@+id/title"
+                style="@style/TextStyle.App.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@{session.title}"
+                android:textAlignment="viewStart"
+                app:highlightText="@{searchQuery}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/period"
+                app:layout_goneMarginTop="12dp"
+                tools:text="テストセッション"
+                />
+
+            <android.support.text.emoji.widget.EmojiTextView
+                android:id="@+id/description"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="3"
+                android:paddingBottom="2dp"
+                android:text="@{session.desc}"
+                android:textAlignment="viewStart"
+                android:visibility="@{simplify ? View.GONE : View.VISIBLE}"
+                app:highlightText="@{searchQuery}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Material is the metaphor A material metaphor is the unifying theory of a rationalized space and a system of motion. The material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic."
+                />
+
+            <android.support.text.emoji.widget.EmojiTextView
+                android:id="@+id/message"
+                style="@style/TextStyle.App.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="3"
+                android:paddingBottom="2dp"
+                android:textAlignment="viewStart"
+                android:textColor="?colorAccent"
+                android:visibility="@{session.message == null ? View.GONE : View.VISIBLE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                />
+
+            <ImageView
+                android:id="@+id/level"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="14dp"
+                android:contentDescription="@string/session_content_description_level"
+                android:visibility="@{simplify ? View.GONE : View.VISIBLE}"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/message"
+                />
+
+            <TextView
+                android:id="@+id/topic"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:maxLines="2"
+                android:textAlignment="viewStart"
+                android:visibility="@{simplify ? View.GONE : View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="@id/level"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/level"
+                app:layout_constraintTop_toTopOf="@id/level"
+                />
+
+            <click.toshi.ipaam1.presentation.common.view.SpeakersSummaryLayout
+                android:id="@+id/speaker_summary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topic"
+                app:layout_goneMarginTop="0dp"
+                app:speakers="@{session.speakers}"
+                app:textColor="@color/black"
+                />
+
+            <click.toshi.ipaam1.presentation.common.view.FavoriteButton
+                android:id="@+id/favorite"
+                style="@style/FavoriteButton"
+                android:layout_marginEnd="8dp"
+                android:checked="@{session.isFavorited}"
+                app:checkedColorTint="@color/accent"
+                app:layout_constraintBottom_toBottomOf="@id/speaker_summary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/speaker_summary"
+                app:uncheckedColorTint="@color/sub_icon_color"
+                />
+
+            <View
+                android:id="@+id/divider_finished_session"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/divider_background"
+                android:visibility="@{session.isFinished ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/speaker_summary"
+                />
+
+            <TextView
+                android:id="@+id/finished_session_check"
+                style="@style/TextStyle.App.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="@string/session_finished"
+                android:textColor="@android:color/black"
+                android:visibility="@{session.isFinished ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_finished_session"
+                app:vectorDrawableStart="@{@drawable/ic_check_circle_black_24dp}"
+                tools:drawableStart="@drawable/ic_check_circle_black_24dp"
+                />
+
+            <TextView
+                android:id="@+id/go_to_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:text="@string/session_go_to_feedback"
+                android:textColor="@color/primary_dark"
+                android:textSize="14sp"
+                android:visibility="@{session.isFinished ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBaseline_toBaselineOf="@id/finished_session_check"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

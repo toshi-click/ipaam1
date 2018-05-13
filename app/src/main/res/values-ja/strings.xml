@@ -1,2 +1,33 @@
 <resources>
+    <!-- Common -->
+    <string name="time_period">%1$s - %2$s</string>
+    <string name="web_search">ウェブ検索</string>
+
+    <!-- NavigationDrawer -->
+    <string name="nav_item_home">ホーム</string>
+    <string name="nav_item_all_feedback">全体アンケートを記入</string>
+    <string name="nav_content_description_drawer_open">ナビゲーションドロワーを開く</string>
+    <string name="nav_content_description_drawer_close">ナビゲーションドロワーを閉じる</string>
+    <string name="nav_content_description_drawer_header">DroidKaigi 2018</string>
+
+    <!-- Session -->
+    <string name="session_title">セッション</string>
+    <string name="session_day_title">DAY%d</string>
+    <string name="session_special_welcome_talk">ウェルカムトーク</string>
+    <string name="session_special_lunch">ランチ</string>
+    <string name="session_special_party">パーティ</string>
+    <string name="session_fetch_failed">セッションの取得に失敗しました</string>
+    <string name="session_content_description_speaker">スピーカーの画像</string>
+    <string name="session_content_description_favorite_button">マイセッション追加ボタン</string>
+    <string name="session_content_description_level">レベルの画像</string>
+    <string name="session_load_retry">リトライ</string>
+    <string name="session_finished">終了済みのセッション</string>
+    <string name="session_go_to_feedback">アンケートへ</string>
+
+    <!-- Notification -->
+    <string name="notification_title">%1$s がもうすぐ始まります。</string>
+    <string name="notification_message">%1$s ~ %2$s @ %3$s</string>
+    <string name="notification_channel_name_start_favorite_session">マイセッションの開始</string>
+    <string name="notification_channel_name_new_feed_post">新しいお知らせ</string>
+
 </resources>

@@ -1,2 +1,46 @@
 <resources>
+    <!-- Common -->
+    <string name="time_period">%1$s - %2$s</string>
+    <string name="room_format" translatable="false">%1$s%2$s</string>
+    <string name="room_format_rtl" translatable="false">%2$s%1$s</string>
+    <string name="web_search">Web Search</string>
+
+    <!-- Preference Keys -->
+    <string name="pref_key_enable_local_time" translatable="false">pref_key_enable_local_time</string>
+    <string name="pref_key_enable_notification" translatable="false">pref_key_enable_notification</string>
+    <string name="pref_key_enable_hide_bottom_navigation" translatable="false">pref_key_enable_hide_bottom_navigation</string>
+    <string name="pref_key_enable_reopen_previous_room_sessions" translatable="false">pref_key_enable_reopen_previous_room_sessions</string>
+
+    <!-- NavigationDrawer -->
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_all_feedback">Conference feedback</string>
+    <string name="nav_content_description_drawer_open">Open navigation drawer</string>
+    <string name="nav_content_description_drawer_close">Close navigation drawer</string>
+    <string name="nav_content_description_drawer_header">DroidKaigi 2018</string>
+
+    <!-- Session -->
+    <string name="session_title">Session</string>
+    <string name="session_day_title">DAY%d</string>
+    <string name="session_special_welcome_talk">Welcome talk</string>
+    <string name="session_special_lunch">Lunch</string>
+    <string name="session_special_party">Party</string>
+    <string name="session_fetch_failed">Failed to fetch session</string>
+    <string name="session_content_description_speaker">Speaker image</string>
+    <string name="session_content_description_favorite_button">Favorite button</string>
+    <string name="session_content_description_level">Session Level image</string>
+    <string name="session_header_divider" translatable="false">" / "</string>
+    <string name="session_load_retry">Retry</string>
+    <string name="session_finished">Finished Session</string>
+    <string name="session_go_to_feedback">Go To Feedback</string>
+    <string name="session_menu_tab_mode_room">Change to Schedule-based views</string>
+    <string name="session_menu_tab_mode_schedule">Change to Room-based views</string>
+    <string name="session_current_badge" translatable="false">NOW!</string>
+
+    <!-- Notification -->
+    <string name="notification_title">%1$s will start soon</string>
+    <string name="notification_message">%1$s ~ %2$s @ %3$s</string>
+    <string name="notification_channel_name_start_favorite_session">start favorite session</string>
+    <string name="notification_channel_name_new_feed_post">New announcement</string>
+
+
 </resources>
