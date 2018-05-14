@@ -14,7 +14,7 @@ object Depends {
         val design = "com.android.support:design:${Versions.supportLibrary}"
         val cardview_v7 = "com.android.support:cardview-v7:${Versions.supportLibrary}"
         val customtabs = "com.android.support:customtabs:${Versions.supportLibrary}"
-        val constraint = "com.android.support.constraint:constraint-layout:1.1.0-beta4"
+        val constraint = "com.android.support.constraint:constraint-layout:1.1.0"
         val multidex = "com.android.support:multidex:1.0.2"
         val support_emoji = "com.android.support:support-emoji-appcompat:${Versions.supportLibrary}"
         val preference_v7 = "com.android.support:preference-v7:${Versions.supportLibrary}"
