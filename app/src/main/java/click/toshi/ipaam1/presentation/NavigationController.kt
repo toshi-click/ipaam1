@@ -39,6 +39,9 @@ class NavigationController @Inject constructor(private val activity: AppCompatAc
         MainActivity.start(activity)
     }
 
+    /**
+     * CustomTabsで開くナビゲーション
+     */
     fun navigateToExternalBrowser(url: String) {
         val customTabsPackageName = CustomTabsHelper.getPackageNameToUse(activity)
         if (tryLaunchingSpecificApp(url, customTabsPackageName)) {
