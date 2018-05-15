@@ -4,7 +4,9 @@
     <string name="room_format" translatable="false">%1$s%2$s</string>
     <string name="room_format_rtl" translatable="false">%2$s%1$s</string>
     <string name="web_search">Web Search</string>
-
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
     <!-- Preference Keys -->
     <string name="pref_key_enable_local_time" translatable="false">pref_key_enable_local_time</string>
     <string name="pref_key_enable_notification" translatable="false">pref_key_enable_notification</string>
