@@ -32,8 +32,8 @@ open class App : DaggerApplication() {
         setupVectorDrawable()
         setupThreeTenABP()
         setupCalligraphy()
-//        setupEmoji()
-//        setupNotification()
+        setupEmoji()
+        setupNotification()
     }
 
     override fun attachBaseContext(base: Context) {
@@ -86,29 +86,29 @@ open class App : DaggerApplication() {
     /**
      * 絵文字を使えるようにする
      */
-//    private fun setupEmoji() {
-//        val fontRequest = FontRequest(
-//                "com.google.android.gms.fonts",
-//                "com.google.android.gms",
-//                "Noto Color Emoji Compat",
-//                R.array.com_google_android_gms_fonts_certs)
-//        val config = FontRequestEmojiCompatConfig(applicationContext, fontRequest)
-//                .setReplaceAll(true)
-//                .registerInitCallback(object : EmojiCompat.InitCallback() {
-//                    override fun onInitialized() {
-//                        Timber.i("EmojiCompat initialized")
-//                    }
-//
-//                    override fun onFailed(throwable: Throwable?) {
-//                        Timber.e(throwable, "EmojiCompat initialization failed")
-//                    }
-//                })
-//        EmojiCompat.init(config)
-//    }
+    private fun setupEmoji() {
+        val fontRequest = FontRequest(
+                "com.google.android.gms.fonts",
+                "com.google.android.gms",
+                "Noto Color Emoji Compat",
+                R.array.com_google_android_gms_fonts_certs)
+        val config = FontRequestEmojiCompatConfig(applicationContext, fontRequest)
+                .setReplaceAll(true)
+                .registerInitCallback(object : EmojiCompat.InitCallback() {
+                    override fun onInitialized() {
+                        Timber.i("EmojiCompat initialized")
+                    }
 
-//    private fun setupNotification() {
-//        initNotificationChannel()
-//    }
+                    override fun onFailed(throwable: Throwable?) {
+                        Timber.e(throwable, "EmojiCompat initialization failed")
+                    }
+                })
+        EmojiCompat.init(config)
+    }
+
+    private fun setupNotification() {
+        initNotificationChannel()
+    }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerAppComponent.builder()
