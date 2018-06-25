@@ -18,7 +18,7 @@
     <string name="nav_item_all_feedback">Conference feedback</string>
     <string name="nav_content_description_drawer_open">Open navigation drawer</string>
     <string name="nav_content_description_drawer_close">Close navigation drawer</string>
-    <string name="nav_content_description_drawer_header">DroidKaigi 2018</string>
+    <string name="nav_content_description_drawer_header">ipaam1</string>
 
     <!-- Session -->
     <string name="session_title">Session</string>

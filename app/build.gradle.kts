@@ -28,9 +28,9 @@ apply {
 }
 
 // Manifest version
-val versionMajor = 1
+val versionMajor = 0
 val versionMinor = 0
-val versionPatch = 0
+val versionPatch = 1
 
 android {
     compileSdkVersion(Versions.compileSdk)
@@ -249,6 +249,6 @@ ktlint {
 
 apply(mapOf("plugin" to "com.google.gms.google-services"))
 
-kotlin {
-    experimental.coroutines = ENABLE
-}
+//kotlin {
+//    experimental.coroutines = ENABLE
+//}
