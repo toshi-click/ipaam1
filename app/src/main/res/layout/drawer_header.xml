@@ -4,5 +4,5 @@
     android:layout_height="wrap_content"
     android:adjustViewBounds="true"
     android:contentDescription="@string/nav_content_description_drawer_header"
-    android:src="@drawable/img_drawer_droidkaigi"
+    android:src="@drawable/img_drawer"
     />
