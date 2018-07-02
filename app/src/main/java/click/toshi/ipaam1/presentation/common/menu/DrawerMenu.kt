@@ -91,7 +91,7 @@ class DrawerMenu @Inject constructor(
             navigateToMainActivity()
         }),
         FEEDBACK(R.id.nav_item_all_feedback, Unit::class, {
-            navigateToExternalBrowser("https://goo.gl/forms/Hjp54vk5P0VILcgf1")
+            navigateToExternalBrowser("https://docs.google.com/forms/d/1oHWpcBSURTeZ2PPlgEQnBpFY_27luZPvxgke1yTjhRU")
         }),
         OTHER(0, Unit::class, {
             //do nothing
