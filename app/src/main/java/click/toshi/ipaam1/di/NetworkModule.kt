@@ -24,7 +24,12 @@ open class NetworkModule {
         val instance = NetworkModule()
     }
 
-    @Singleton @Provides
+    /**
+     * OKHttpのクライアント作成
+     * ロギングとネットワークのインターセプターを付けて作成する
+     */
+    @Singleton
+    @Provides
     fun provideOkHttpClient(@NetworkLogger loggingInterceptors: Set<@JvmSuppressWildcards
     Interceptor>):
             OkHttpClient =
@@ -34,7 +39,9 @@ open class NetworkModule {
                 }
             }.build()
 
-    @RetrofitApplication @Singleton @Provides
+    @RetrofitApplication
+    @Singleton
+    @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .client(okHttpClient)
@@ -47,7 +54,9 @@ open class NetworkModule {
                 .build()
     }
 
-    @RetrofitGoogleForm @Singleton @Provides
+    @RetrofitGoogleForm
+    @Singleton
+    @Provides
     fun provideRetrofitForGoogleForm(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .client(okHttpClient)
@@ -60,7 +69,9 @@ open class NetworkModule {
                 .build()
     }
 
-    @RetrofitGithub @Singleton @Provides
+    @RetrofitGithub
+    @Singleton
+    @Provides
     fun provideRetrofitForGithub(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl("https://api.github.com")
@@ -73,7 +84,8 @@ open class NetworkModule {
                 .build()
     }
 
-    @Singleton @Provides
+    @Singleton
+    @Provides
     open fun provideApplicationApi(@RetrofitApplication retrofit: Retrofit): ApplicationApi {
         return retrofit.create(ApplicationApi::class.java)
     }
