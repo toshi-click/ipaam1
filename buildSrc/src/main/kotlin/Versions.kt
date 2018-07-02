@@ -4,7 +4,7 @@ object Versions {
     const val minSdk = 23
     const val targetSdk = 27
     const val gradleBuildTool = "3.1.2"
-    const val kotlin = "1.2.41"
+    const val kotlin = "1.2.50"
     const val kotlinx_coroutines = "0.22.2"
     const val googleServices = "3.1.1"
     const val ktlint = "0.15.0"
