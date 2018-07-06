@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import androidx.net.toUri
 import click.toshi.ipaam1.R
 import click.toshi.ipaam1.presentation.common.fragment.Findable
+import click.toshi.ipaam1.presentation.question.AllQuestionFragment
 import click.toshi.ipaam1.presentation.sessions.AllSessionsFragment
 import click.toshi.ipaam1.util.CustomTabsHelper
 import javax.inject.Inject
@@ -35,8 +36,8 @@ class NavigationController @Inject constructor(private val activity: AppCompatAc
         replaceFragment(AllSessionsFragment.newInstance())
     }
 
-    fun navigateToTest() {
-        replaceFragment(TestFragment.newInstance())
+    fun navigateToQuestion() {
+        replaceFragment(AllQuestionFragment.newInstance())
     }
 
     fun navigateToMainActivity() {

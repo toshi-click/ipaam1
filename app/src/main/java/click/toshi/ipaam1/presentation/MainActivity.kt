@@ -8,13 +8,13 @@ import click.toshi.ipaam1.R
 import click.toshi.ipaam1.databinding.ActivityMainBinding
 import click.toshi.ipaam1.presentation.common.activity.BaseActivity
 import click.toshi.ipaam1.presentation.common.menu.DrawerMenu
-import click.toshi.ipaam1.presentation.sessions.SessionsActionCreator
+import click.toshi.ipaam1.presentation.question.QuestionActionCreator
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
     @Inject lateinit var navigationController: NavigationController
     @Inject lateinit var drawerMenu: DrawerMenu
-    @Inject lateinit var sessionsActionCreator: SessionsActionCreator
+    @Inject lateinit var questionsActionCreator: QuestionActionCreator
 
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
@@ -26,9 +26,9 @@ class MainActivity : BaseActivity() {
 
         drawerMenu.setup(binding.drawerLayout, binding.drawer, binding.toolbar, true)
 
-        navigationController.navigateToTest()
+        navigationController.navigateToQuestion()
         if (savedInstanceState == null) {
-            sessionsActionCreator.subscribeSessionChange()
+            questionsActionCreator.subscribeQuestionChange()
         }
     }
 
