@@ -26,7 +26,7 @@ class MainActivity : BaseActivity() {
 
         drawerMenu.setup(binding.drawerLayout, binding.drawer, binding.toolbar, true)
 
-        navigationController.navigateToTest()
+        navigationController.navigateToSessions()
         if (savedInstanceState == null) {
             sessionsActionCreator.subscribeSessionChange()
         }

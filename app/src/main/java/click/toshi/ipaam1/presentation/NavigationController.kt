@@ -35,10 +35,6 @@ class NavigationController @Inject constructor(private val activity: AppCompatAc
         replaceFragment(AllSessionsFragment.newInstance())
     }
 
-    fun navigateToTest() {
-        replaceFragment(TestFragment.newInstance())
-    }
-
     fun navigateToMainActivity() {
         MainActivity.start(activity)
     }
