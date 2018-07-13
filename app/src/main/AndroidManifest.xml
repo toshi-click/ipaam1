@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.Main2Activity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             >
@@ -26,7 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".presentation.MainActivity"
+            android:label="@string/app_name">
+        </activity>
         <receiver android:name=".presentation.common.notification.NotificationBroadcastReceiver" />
 
         <receiver android:name=".presentation.common.notification.LocaleChangedBroadcastReceiver">
