@@ -12,17 +12,17 @@ stages:
 #  - test
 
 # filelint 改行コードをなどをチェックする
-filelint:
-  stage: lint
-  image: toshiclick/gitlab-ci-ansible-centos
-  script:
-    - yum install -y golang
-    - echo export GOROOT=/usr/lib/golang >> ~/.bash_profile
-    - echo export GOPATH=/usr/share/gocode >> ~/.bash_profile
-    - echo export PATH=$PATH:$GOROOT/bin:$GOPATH/bin >> ~/.bash_profile
-    - source ~/.bash_profile
-    - go get -u github.com/synchro-food/filelint
-    - /usr/share/gocode/bin/filelint .
+#filelint:
+#  stage: lint
+#  image: toshiclick/gitlab-ci-ansible-centos
+#  script:
+#    - yum install -y golang
+#    - echo export GOROOT=/usr/lib/golang >> ~/.bash_profile
+#    - echo export GOPATH=/usr/share/gocode >> ~/.bash_profile
+#    - echo export PATH=$PATH:$GOROOT/bin:$GOPATH/bin >> ~/.bash_profile
+#    - source ~/.bash_profile
+#    - go get -u github.com/synchro-food/filelint
+#    - /usr/share/gocode/bin/filelint .
 
 build:
   image: toshiclick/gitlab-ci-android
