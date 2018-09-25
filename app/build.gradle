@@ -7,7 +7,7 @@ android {
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "click.toshi.ipaam1"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ ext.glide_version = "4.2.0"
 
 dependencies {
     // kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // support libs
     implementation "com.android.support:appcompat-v7:$support_version"
