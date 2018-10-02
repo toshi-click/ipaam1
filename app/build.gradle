@@ -72,7 +72,7 @@ android {
             debuggable false
             zipAlignEnabled true
             minifyEnabled true
-            useProguard false
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
