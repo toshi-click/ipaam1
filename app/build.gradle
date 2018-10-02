@@ -1,5 +1,6 @@
 // 必須
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 // kotlin関連 kotlin系のapplyは他のapplyの後にやったほうが問題が少ない
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -124,6 +125,9 @@ android {
             }
         }
     }
+}
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
 }
 // Library versions (com.android.support:)
 ext.support_lib_version = "27.1.1"
