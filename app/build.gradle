@@ -188,4 +188,4 @@ dependencies {
 }
 // MUST BE AT THE BOTTOM
 // firebaseでgoogle-services.jsonを生成してから有効にすること
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
