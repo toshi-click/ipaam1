@@ -147,6 +147,7 @@ dependencies {
     implementation "com.android.support:cardview-v7:$support_lib_version"
     implementation "com.android.support:design:$support_lib_version"
     implementation "com.android.support:animated-vector-drawable:$support_lib_version"
+    implementation "com.android.support:customtabs:${support_lib_version}"
     implementation "com.android.support.constraint:constraint-layout:1.1.3"
     kapt 'com.android.databinding:compiler:3.1.4'
 
