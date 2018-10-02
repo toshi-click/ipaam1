@@ -13,13 +13,13 @@ def versionPatch = 0
 def packageName = "click.toshi.ipaam1"
 
 // SDK versions
-ext.compile_sdk_version = "27"
+ext.compile_sdk_version = "28"
 // show SDK Manager → SDK Tools Tabs → Checked「Show Package Details」(Right Bottom)
-ext.build_tools_version = "27.0.3"
+ext.build_tools_version = "28.0.2"
 // 最低サポートAndroidバージョン
 ext.min_sdk_version = "24"
 // 最大サポートAndroidバージョン
-ext.target_sdk_version = "27"
+ext.target_sdk_version = "28"
 
 android {
     flavorDimensions "default"
