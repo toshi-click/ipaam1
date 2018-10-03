@@ -21,6 +21,10 @@ buildscript {
         // We recommend changing it to the latest version from our changelog:
         // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
         classpath 'io.fabric.tools:gradle:1.25.4'
+
+        // オープンソースライセンスを表示するライブラリ
+        // https://developers.google.com/android/guides/opensource
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.9.3'
     }
 }
 
