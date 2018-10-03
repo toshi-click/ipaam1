@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         }
 
         // ライセンス画面を表示する
-        startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+//        startActivity(Intent(this, OssLicensesMenuActivity::class.java))
 
         store.repos.observe(this) {
             it ?: return@observe
